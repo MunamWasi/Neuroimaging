@@ -5,9 +5,9 @@ Neuroimaging is the most interesting frontier in science right now, and is chang
 This repository hopes to house techniques, thoughts, and insights, into neuroimaging.
 
 ## Sections:
-- ![Neuroimaging Terms](https://github.com/MunamWasi/Neuroimaging/tree/master/Neuroimaging%20Terms)
-- ![Neuroimaging and Statistics](https://github.com/MunamWasi/Neuroimaging/tree/master/Neuroimaging%20and%20Statistics)
-- ![Neuroimaging and the Law](https://github.com/MunamWasi/Neuroimaging/tree/master/Neuroimaging%20and%20the%20Law)
-- ![The History of Neuroimaging](https://github.com/MunamWasi/Neuroimaging/tree/master/The%20History%20of%20Neuroimaging)
-- ![Personal Viewpoints](https://github.com/MunamWasi/Neuroimaging/tree/master/Personal%20Viewpoints)
-- ![References](https://github.com/MunamWasi/Neuroimaging/tree/master/References)
+1. ![Neuroimaging Terms](https://github.com/MunamWasi/Neuroimaging/tree/master/Neuroimaging%20Terms)
+2. ![Neuroimaging and Statistics](https://github.com/MunamWasi/Neuroimaging/tree/master/Neuroimaging%20and%20Statistics)
+3. ![Neuroimaging and the Law](https://github.com/MunamWasi/Neuroimaging/tree/master/Neuroimaging%20and%20the%20Law)
+4. ![The History of Neuroimaging](https://github.com/MunamWasi/Neuroimaging/tree/master/The%20History%20of%20Neuroimaging)
+5. ![Personal Viewpoints](https://github.com/MunamWasi/Neuroimaging/tree/master/Personal%20Viewpoints)
+6. ![References](https://github.com/MunamWasi/Neuroimaging/tree/master/References)
