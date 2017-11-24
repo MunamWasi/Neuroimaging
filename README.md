@@ -12,9 +12,3 @@ This repository hopes to house techniques, thoughts, and insights, into neuroima
 5. ![The History of Neuroimaging](https://github.com/MunamWasi/Neuroimaging/tree/master/The%20History%20of%20Neuroimaging)
 6. ![Personal Viewpoints](https://github.com/MunamWasi/Neuroimaging/tree/master/Personal%20Viewpoints)
 7. ![References](https://github.com/MunamWasi/Neuroimaging/tree/master/References)
-
-## Neuroimaging Fundamentals:
-
-Understanding Neuroimaging starts with understanding the brain, even in a simplified manner.
-
-The brain is a collection of neurons that together with complex tissues, form "Gray Matter" and "White Matter". 
