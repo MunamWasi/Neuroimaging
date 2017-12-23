@@ -1,0 +1,8 @@
+Voxel:
+
+Definition:
+
+A voxel is a 3D volumetric representation of a fixed point in space, or a volume pixel as the name implies. Voxels are created by combining cross-sectional images 
+
+Further Resources:
+
