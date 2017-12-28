@@ -1,0 +1,44 @@
+mkdir TBSS
+mkdir TBSS/run_tbss
+
+cp  1*/*FA*nii.gz TBSS/run_tbss &
+
+cd TBSS/run_tbss
+
+module load fsl/5.0.9
+
+qsub -cwd -q som,asom,pub*,free* /data/apps/fsl/5.0.9/bin/tbss_1_preproc *nii.gz
+qsub -cwd -q som,asom,pub*,free* /data/apps/fsl/5.0.9/bin/tbss_2_reg -t ENIGMA_DTI_FA.nii.gz
+qsub -cwd -q som,asom,pub*,free* /data/apps/fsl/5.0.9/bin/tbss_3_postreg -S
+
+mkdir /TBSS/ENIGMA_targets_edited/
+
+cd /enigmaDTI/TBSS/run_tbss/
+
+fslmerge -t FA ./FA/*FA_to_target.nii.gz --> Creates FA.nii.gz
+
+fslmaths FA.nii.gz -bin -Tmean –thr 0.9 /enigmaDTI/TBSS/ENIGMA_targets_edited/mean_FA_mask.nii.gz
+fslmaths /enigmaDTI/TBSS/ENIGMA_targets/ENIGMA_DTI_FA.nii.gz –mas /enigmaDTI/TBSS/ENIGMA_targets_edited/mean_FA_mask.nii.gz /enigmaDTI/TBSS/ENIGMA_targets_edited/mean_FA.nii.gz
+fslmaths /enigmaDTI/TBSS/ENIGMA_targets/ENIGMA_DTI_FA_skeleton.nii.gz –mas /enigmaDTI/TBSS/ENIGMA_targets_edited/mean_FA_mask.nii.gz /enigmaDTI/TBSS/ENIGMA_targets_edited/mean_FA_skeleton.nii.gz
+
+tbss_4_prestats -0.049
+
+#cd /enigmaDTI/TBSS/run_tbss/
+
+for subj in `ls FA/ecc_1*FA_FA.nii.gz | awk -F/ ' { print $2 } ' | awk -F_p ' { print $1 } '`; do 
+ mkdir -p ./FA_individ/${subj}/stats/
+ mkdir -p ./FA_individ/${subj}/FA/
+ cp -f ./FA/${subj}_*.nii.gz ./FA_individ/${subj}/FA/
+ ####[optional/recommended]####
+ fslmaths ./FA_individ/${subj}/FA/${subj}_*FA_to_target.nii.gz -mas ../ENIGMA_targets_edited/mean_FA_mask.nii.gz ./FA_individ/${subj}/FA/${subj}_masked_FA.nii.gz
+
+done
+
+
+#cd /enigmaDTI/TBSS/run_tbss/
+
+for subj in `ls FA/ecc_1*FA_FA.nii.gz | awk -F/ ' { print $2 } ' | awk -F_p ' { print $1 } '`; do 
+
+    /data/apps/fsl/5.0.9/bin/tbss_skeleton -i ./FA_individ/${subj}/FA/${subj}_masked_FA.nii.gz -p 0.049 /dfs1/som/tvanerp_col/enigma_DTI/maastricht/nifti/enigmaDTI/TBSS/ENIGMA_targets_edited/mean_FA_skeleton_mask_dst.nii.gz /data/apps/fsl/5.0.9/data/standard/LowerCingulum_1mm.nii.gz ./FA_individ/${subj}/FA/${subj}_masked_FA.nii.gz ./FA_individ/${subj}/stats/${subj}_masked_FAskel.nii.gz -s /dfs1/som/tvanerp_col/enigma_DTI/maastricht/nifti/enigmaDTI/TBSS/ENIGMA_targets_edited/mean_FA_skeleton_mask.nii.gz    
+
+done
