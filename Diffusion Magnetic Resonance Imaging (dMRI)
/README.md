@@ -10,4 +10,5 @@ These numerical insights into the brain illuminates the relationship between pre
 
 The research implications are enormous, and given greater adoption and refinement of techniques, and a greater capability to interpret insights, it is clear that there are many potential clinical applications. Despite being a neuroimaging neophyte, I have seen dMRI being used in cases from executive function analysis in Capital Crime cases all the way to broader bio-behavioral developmental research, schizophrenic hallucination studies, PTSD analysis, Parkinsons' Disease research, and electrostatic burns etc. 
 
-## Diffusion Weighted Imaging (DWI)
+## Diffusion Tensor Imaging (DTI)
+
